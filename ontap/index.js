@@ -25,12 +25,10 @@ let orderList = [
     }
 ];
 
-// Chuẩn hóa mã đơn
 function formatId(id) {
     return String(id).trim().toUpperCase();
 }
 
-// Tìm vị trí đơn hàng
 function findOrder(id) {
     id = formatId(id);
 
@@ -43,7 +41,6 @@ function findOrder(id) {
     return -1;
 }
 
-// Kiểm tra mã đơn
 function checkId(id) {
     if (id === null) {
         return "Hủy thao tác";
@@ -70,7 +67,6 @@ function checkId(id) {
     return "";
 }
 
-// Nhập số nguyên
 function inputNumber(message, min) {
     while (true) {
         let value = prompt(message);
@@ -90,7 +86,6 @@ function inputNumber(message, min) {
     }
 }
 
-// Viết hoa chữ cái đầu
 function formatName(name) {
     let arr = name.trim().split(/\s+/);
 
@@ -102,7 +97,6 @@ function formatName(name) {
     return arr.join(" ");
 }
 
-// 1. Hiển thị danh sách
 function showOrders() {
     if (orderList.length === 0) {
         console.log("Danh sách đơn đặt vé trống.");
@@ -132,7 +126,6 @@ function showOrders() {
     console.log("Tổng doanh thu:", total);
 }
 
-// 2. Thêm đơn
 function addOrder() {
     let id = prompt("Nhập mã đơn đặt vé:");
 
@@ -188,12 +181,10 @@ function addOrder() {
 
     let money = quantity * price;
 
-    // Mua trên 4 vé được giảm 10%
     if (quantity > 4) {
         money = money * 0.9;
     }
 
-    // Phí 8%
     let finalMoney = money * 1.08;
 
     let newOrder = {
@@ -210,7 +201,6 @@ function addOrder() {
     console.log("Thêm đơn đặt vé thành công.");
 }
 
-// 3. Cập nhật đơn
 function updateOrder() {
     let id = prompt("Nhập mã đơn muốn cập nhật:");
 
@@ -255,7 +245,6 @@ function updateOrder() {
     console.log("Cập nhật đơn đặt vé thành công.");
 }
 
-// 4. Xóa đơn
 function deleteOrder() {
     let id = prompt("Nhập mã đơn muốn xóa:");
 
@@ -286,7 +275,6 @@ function deleteOrder() {
     }
 }
 
-// 5. Tìm kiếm theo tên phim
 function searchFilm() {
     let name = prompt("Nhập tên phim muốn tìm:");
 
@@ -315,7 +303,6 @@ function searchFilm() {
     }
 }
 
-// Chương trình chính
 function startApp() {
     let choice = "";
 
